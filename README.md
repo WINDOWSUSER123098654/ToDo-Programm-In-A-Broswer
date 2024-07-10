@@ -1,3 +1,9 @@
+# Hi!
+
+This is my first project made on Angular CLI.
+Yes, it's just a to-do list in the browser. There's nothing special here.
+So... Yeah. Tell me what shortcomings there are in my project and I will correct them in the future.
+
 # ToDo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
