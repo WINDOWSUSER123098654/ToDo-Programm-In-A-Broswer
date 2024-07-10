@@ -1,0 +1,51 @@
+<div class="container">
+  <p>-</p>
+  <p>-</p>
+</div>
+<div class="container-sm border mt-2 pb-3" style="max-width: 1900px">
+  <div class="input-group mt-3 mb-5 col">
+    <label class="control-label mb-1 fs-4" for="add-todo">Add your todo</label>
+    <div class="input-group">
+      <input (keyup.enter)="onAddClick()" [(ngModel)]="inputValue" id="add-todo" type="text" class="form-control" placeholder="Add ToDo"
+             aria-label="Recipient's username" aria-describedby="button-addon2">
+      <button (click)="onAddClick()" class="btn btn-outline-secondary" type="button" id="button-addon2">Add new Todo</button>
+<!--      <button (click)="editAll()" class="btn btn-outline-secondary" type="button" id="button-addon3">Edit All</button>-->
+      <button (click)="DeleteAll()" class="btn btn-outline-secondary" type="button" id="button-addon4">Delete All</button>
+    </div>
+
+  </div>
+
+<!--  <div>-->
+<!--    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Add</button>-->
+<!--  </div>-->
+
+  <ul class="list-group" style="overflow-y: scroll; height: 70vh">
+    <li *ngFor = "let todo of todos; let i = index" class="list-group-item d-flex justify-content-between">
+      <div class="w-75">
+        <input class="form-check-input me-1" type="checkbox"
+               (click)="todo.completed = !todo.completed"
+               [value]="todo.completed"
+               (тgModelChange)="OnCheckboxChange(todo, i)"
+               id="i">
+        <input #editingInput style="width:90%" class="border-0"
+               [ngClass]="{readonly: todo.isEditing}"
+               (keyup.enter)="onSave(i, editingInput.value)"
+               [style]="'user-select: none !important;'"
+               [readonly] = "!todo.isEditing"
+               [value]="todo.description">
+      </div>
+      <div *ngIf="!todo.isEditing">
+        <i  (click)="onEdit(i); editingInput.focus()"  class="bi bi-pencil-square me-2" ></i>
+        <i class="bi bi-trash" (click)="onDeleteClick(i)"></i>
+      </div>
+<!--      <div *ngIf="todo.isEditing">-->
+<!--      <i (click)="OnCancel(i)" class="bi bi-x-lg"></i>-->
+<!--      </div>-->
+      <div *ngIf="todo.isEditing">
+        <i (click)="onCancel(i)" class="bi bi-x-lg me-2"></i>
+        <i (click)="onSave(i, editingInput.value)" class="bi bi-floppy"></i>
+      </div>
+
+    </li>
+  </ul>
+</div>

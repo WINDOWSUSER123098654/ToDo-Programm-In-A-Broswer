@@ -1,0 +1,42 @@
+*{
+  box-sizing: border-box;
+}
+
+.container-sm {
+  margin-top: 100px;
+  backdrop-filter: blur(7px);
+}
+
+.btn{
+  color: white;
+}
+
+.editing{
+  outline: none;
+  user-select: none;
+}
+
+/*.input-group{*/
+/*  backdrop-filter: blur(10px);*/
+/*}*/
+
+.control-label{
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
+/*.list-group{*/
+/*  backdrop-filter: blur(10px);*/
+/*}*/
+
+i:hover{
+  opacity: 0.5;
+}
+
+/*list-group-item{*/
+/*  backdrop-filter: blur(10px);*/
+/*}*/
+
+/*list-grou{*/
+/*  backdrop-filter: blur(10px);*/
+/*}*/
